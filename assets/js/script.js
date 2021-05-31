@@ -70,7 +70,7 @@ $(".card .list-group").sortable({
     helper: "clone",
     activate: function(event, ui) {
         $(this).addClass("dropover");
-        $(".bottom-trash").removeClass("bottom-trash-drag");
+        $(".bottom-trash").addClass("bottom-trash-drag");
         console.log(ui);
     },
     deactivate: function(event, ui) {
@@ -85,7 +85,7 @@ $(".card .list-group").sortable({
     },
     out: function(event) {
         $(event.target).removeClass("dropover-active");
-        $("bottom-trash").removeClass("bottom-trash-active");
+        $(".bottom-trash").removeClass("bottom-trash-active");
         console.log(event);
     },
     update: function(event) {
@@ -134,7 +134,7 @@ $("#task-form-modal").on("shown.bs.modal", function() {
 });
 
 // save button in modal was clicked
-$("#task-form-modal .btn-primary").click(function() {
+$("#task-form-modal .btn-save").click(function() {
     // get form values
     var taskText = $("#modalTaskDescription").val();
     var taskDate = $("#modalDueDate").val();
